@@ -17,7 +17,7 @@ opus = "mode iii"
   line-width = #(- line-width (* mm  3.000000) (* mm 1))
   line-width = 160\mm - 2.0 * 10.16\mm
   score-markup-spacing.minimum-distance = 15\mm
-  %markup-system-spacing.minimum-distance = 10\mm
+  %markup-system-spacing.minimum-distance = 15\mm
   %annotate-spacing = ##t
 }
 

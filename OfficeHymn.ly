@@ -16,7 +16,8 @@ opus = "mode iii"
   % images with a little space on the right
   line-width = #(- line-width (* mm  3.000000) (* mm 1))
   line-width = 160\mm - 2.0 * 10.16\mm
-  markup-system-spacing.minimum-distance = 5\mm
+  score-markup-spacing.minimum-distance = 15\mm
+  %markup-system-spacing.minimum-distance = 10\mm
   %annotate-spacing = ##t
 }
 
@@ -131,13 +132,13 @@ words = \lyricmode {
 	
 	   \key c \major
        g8 a[b] b[a] c' b[a] g a b4 
-	  \divisioMaior 
+	  \divisioMaior | \break
 	  g8 b g a e f e d4
-      \divisioMaxima
+      \divisioMaxima | \break
 	  g8 b a c' d' c' b[a] g4 
-	  \divisioMaior 
+	  \divisioMaior | \break
 	  a8[c'] g a f g[a] g f[e] e4
-	 \finalis 
+	 \finalis   | \break
 	  e8[f] e([d] e4) 
 	  \finalis
     	}

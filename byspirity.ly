@@ -21,18 +21,21 @@ refrain = \lyricmode {
   Help us spread the good news of the Lord
 }
 
-refrainmelody = \relative c' { d1 e a4. g8 fis4. e8 d1 r2 g4 (fis) e1  b'4. a8 g4. fis8 e1  }
+refrainmelody = { 
+
+\tempo 2 = 80 \key d \major 
+\numericTimeSignature
+ \time 2/2 \relative c' { d1 e a4. g8 fis4 e d1 r2 a'4 (g) fis1  b4. a8 g4 fis  e1  }}
 \score {
-  <<
+   << 
     \new voice = "chords" {
       \new ChordNames \refrainchords
     }
     \new Voice = "melody" {
-      \key d \major \refrainmelody
+      \refrainmelody
     }
      \new Lyrics \lyricsto "melody" {
-       \refrain
-     }
+      \refrain    }
   >>
 
   \layout {}

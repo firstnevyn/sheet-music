@@ -179,7 +179,7 @@ versefour = \lyricmode {
     \context {
       \Lyrics
       \override VerticalAxisGroup.staff-affinity = #CENTER
-      \override LyricSpace.minimum-distance = #.9
+      \override LyricSpace.minimum-distance = #1
     }
   }
   \midi {

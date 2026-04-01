@@ -5,7 +5,6 @@
 
 }
 global = {
-global = {
   \key bes \major
   \time 3/4
 }
@@ -70,7 +69,7 @@ verseTwo = \lyricmode {
   
   Christ the Lord is ri -- sen!
   'Twas by thy blood, im -- mor -- tal Lamb,
-  Thine armies trod the tempter down;
+  Thine arm -- ies trod the tem -- pter down;
   'Twas by thy word and power -- ful name
   They gained the bat -- tle and re -- nown:
   Al -- le -- lu -- ya Al -- le -- lu -- ya 

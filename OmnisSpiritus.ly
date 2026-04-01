@@ -11,10 +11,12 @@
   % offset the left padding, also add 1mm as lilypond creates cropped
   % images with a little space on the right
   %line-width = #(- line-width (* mm  3.000000) (* mm 1))
-  line-width = 200\mm - 2.0 * 10.16\mm
+  %line-width = 200\mm - 2.0 * 10.16\mm
   score-markup-spacing.minimum-distance = 15\mm
   top-margin = 15\mm
   bottom-margin = 20\mm
+  left-margin = 25\mm
+  right-margin = 20\mm
   markup-system-spacing.minimum-distance = 20\mm
   top-system-spacing.minimum-distance  = 5\mm
   system-system-spacing.minimum-distance = 10\mm

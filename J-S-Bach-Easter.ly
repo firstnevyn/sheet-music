@@ -9,10 +9,6 @@ MyTranspose =
   (ly:music?)
   #{ \transpose d e $m #})
 
-bigbar = {
-  \once \override StaffGroup.BarLine.allow-span-bar = ##t
-}
-
 %MyTranspose = {}
 
 \header {
@@ -61,11 +57,11 @@ soprano =  {
   \MyTranspose {
     \global
     \relative c'' {
-      a4 d a b | a4. g8 fis2 | a4 a g fis | e e d2 \barNumberCheck 5 \bigbar \break
-      a'4 d a b a4. g8 fis2 a4 a g  fis e e d2 | \barNumberCheck 9 \bigbar \break
-      e4 e fis8 gis  a4 a gis a2 b4. cis8  d4 d cis cis b2 \bigbar \break
-      fis4 fis b a a gis a2 b4 a g fis e e d2 \bigbar \bar "||" \allowBreak 
-      d2 d2 \bigbar \bar "|."
+      a4 d a b | a4. g8 fis2 | a4 a g fis | e e d2 \barNumberCheck 5 \allowBreak
+      a'4 d a b a4. g8 fis2 a4 a g  fis e e d2 | \barNumberCheck 9  \break
+      e4 e fis8 gis  a4 a gis a2 b4. cis8  d4 d cis cis b2  \break
+      fis4 fis b a a gis a2 b4 a g fis e e d2  \bar "||" \allowBreak
+      d2 d2 \bar "|."
     }
   }
 }
@@ -145,7 +141,7 @@ versefour = \lyricmode {
 }
 
 \score {
-  \new StaffGroup <<
+  \new ChoirStaff <<
     \new Staff \with {
       %instrumentName = \markup \right-column { "Soprano" "Alto" }
       instrumentName = \markup \center-column { "S" "A" }
@@ -173,8 +169,8 @@ versefour = \lyricmode {
 
   \layout {
     \context {
-      \StaffGroup
-      \override BarLine.allow-span-bar = ##f
+      \ChoirStaff
+      \override SystemStartBracket.transparent = ##t
     }
     \context {
       \Score

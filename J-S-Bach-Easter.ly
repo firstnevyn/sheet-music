@@ -57,10 +57,10 @@ soprano =  {
   \MyTranspose {
     \global
     \relative c'' {
-      a4 d a b | a4. g8 fis2 | a4 a g fis | e e d2 \barNumberCheck 5 \allowBreak
+      a4 d a b | a4. g8 fis2 | a4 a g fis | e e d2 \barNumberCheck 5 \break
       a'4 d a b a4. g8 fis2 a4 a g  fis e e d2 | \barNumberCheck 9  \break
       e4 e fis8 gis  a4 a gis a2 b4. cis8  d4 d cis cis b2  \break
-      fis4 fis b a a gis a2 b4 a g fis e e d2  \bar "||" \allowBreak
+      fis4 fis b a a gis a2 b4 a g fis e e d2  \bar "||" \break
       d2 d2 \bar "|."
     }
   }
@@ -137,7 +137,7 @@ versefour = \lyricmode {
   From sin's pow'r do thou set free Soul's new -- born,𝄓 O Lord. in thee.
   Hymns of glo -- ry songs of praise, Fa -- ther, un -- to thee we raise;
   Ris -- en Lord,𝄓 all praise to thee With the Spir -- it ev -- er be.
-  \once \override Lyrics.LyricHyphen.minimum-distance = #4  A -- men
+  \once \override Lyrics.LyricHyphen.minimum-distance = #2  A -- men
 }
 
 \score {
@@ -157,7 +157,7 @@ versefour = \lyricmode {
     \new Lyrics \lyricsto "words" \versefour
 
     \new Staff \with {
-      %instrumentName = \markup \right-column { "Tenor" "Bass" }
+      %instrumentName = \markup \right-column { "Tenor" "Bass" }1131857
       instrumentName = \markup \center-column { "T" "B" }
       %shortInstrumentName = \markup \center-column { "T" "B" }
     } <<

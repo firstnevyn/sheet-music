@@ -46,9 +46,8 @@ MyTranspose =
 global = {
   \key d \major
   \time 4/4 \numericTimeSignature
-  \set Timing.beamExceptions = #'()
-  \set Timing.baseMoment = #(ly:make-moment 1/4)
-  \set Timing.beatStructure = 1,1,1,1
+  \set beamMinimumSubdivision = #1/4
+  \set beamMaximumSubdivision = #1/4
   \override SpacingSpanner.uniform-stretching = ##t
   \override BarLine.allow-span-bar = ##f
 }

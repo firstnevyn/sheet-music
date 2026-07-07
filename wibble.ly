@@ -18,7 +18,7 @@
 }
 \score {
   \header {
-       title = "foo"
+    title = "foo"
   }
   \relative c' { b2 e f g \bar "|."}
   \layout {}

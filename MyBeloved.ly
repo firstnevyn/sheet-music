@@ -1,7 +1,7 @@
 \version "2.24.4"
 
 % 20 is the default... change this to make everything a little bigger or smaller
-#(set-global-staff-size 22)
+#(set-global-staff-size 17)
 
 % This music functon "MyTranspose" controls the global transpose of all voices.
 MyTranspose =
@@ -27,11 +27,11 @@ MyTranspose = {}
   right-margin = 18\mm
   top-margin = 12\mm
   %bottom-margin = 24\mm
-  systems-per-page = 2
+  systems-per-page = 3
   tagline = ""
-  ragged-last = ##t
-  %ragged-bottom = ##t
-  ragged-last-bottom = ##t
+  ragged-last = ##f
+  %ragged-bottom = ##
+  ragged-last-bottom = ##f
   %system-system-spacing = #'((basic-distance . 0.1)
   %                           (minimum-distance . 10)
   %                           (padding . 5)
@@ -63,7 +63,7 @@ soprano =  {
       r2 r4 r8 f g4 r8 f \tuplet 3/2 {g4 f g} d r8 f g4. bes8 |
       d4 c2 g4 bes4. 8  ees4. d8 d2. c8 bes g4. a8 \tuplet 3/2 { bes4 c d } 
       f (d8 a f') d4 a8| g' (f d2) f,4 c'2 r8 f,4 8
-      g2 ~ 8 f4 g8 d4 d2 f4 a f2 d4 | a' r8 d, a' a a b c bes bes (f) d4 d8 f| e4 d8 c gis'4. c8 |
+      g2 ~ 8 f4 g8 d4 d2 f4 a f2 d4 | a' r8 d, a' a a b c bes bes (f) des4 des8 f| e4 d8 cis gis'4. cis8 |
       d4 (a2) d8 e f (c bes2  aes8 bes) des2. r8 8 aes'2.. aes,8 2. 4 des2. (aes'4) bes,2. 
       \omit Slur c8 (des) \undo \omit Slur | f2 ( bes,2 ~ bes ~ 8) r8 r4 r2 r4 r8 bes, f'1 ~ 1 |
       r2 r4 \fermata r8 \fermata bes,8 f'1 ~ 2 \fermata r2 \fermata \fine
@@ -76,7 +76,7 @@ sopranodynamics ={
    \> s2 s4 \! s4 s1 s4 s4 s8 \> s2 s8 \! \< s2 s8 \! s1 s4 s4 \> s2 s8\! s1 s1 s1 s1 s2 s8 \p %fuge entry
    s8 s4 s16 \cresc s1 s8
    s1 s1 s1 s2 s4 \fff
-   s1 s1 s1 s1 s2 s2 \dim s1 s1 s1 \p s1 s1 s2 \ppp
+   s1 s1 s1 s1 s2  \override DynamicTextSpanner.style = #'none s2 \dim s1 s1 s1 \p s1 s1 s2 \ppp
   
 }
 
@@ -111,7 +111,7 @@ tenor = {
       \sloff c8 (bes) \slon r4 r8 c f8. d16 ees2.  g,8 g d'4. 8 \tuplet 3/2 {c4 a aes} |
       g8 (a4 bes8 d4) e8 (f) | d4 c8 d a8. (d,16 f8 ) g16 (f) e2 r8 ees4 8 |
       d2 ~ 8 4 f8 g4 g2 c,4 d2  aes'4 \sloff g8 (f) e (f) r
-      d a' a a b c bes bes (f) d4 d8 f| e4 d8 c gis'4. c8 |
+      d a' a a b c bes bes (f) des4 des8 f| e4 d8 cis gis'4. cis8 |
       d4 (a2) d8 e f (c bes2  aes8 bes) des2. r8 
       des8 f2.. aes,8 \slon 2. 4 ges'2 (f) fes,2. fes4 
       des1 ~ 2 ~ 8 r r4  r2 r4 r8 bes8 d1 ~ 1 
@@ -172,6 +172,7 @@ basswords = { \openingcommonwords
               \lyricmode { earth, on the earth; the time of the sing -- ing of  birds __ is come, }
               \endingcommonwords
 }
+
 %{
 \score {
   \new ChoirStaff <<
@@ -212,8 +213,9 @@ basswords = { \openingcommonwords
       \override LyricSpace.minimum-distance = #1
     }
   }
-}
 %}
+
+%%{
 \score {
    \new ChoirStaff <<
     \new Dynamics \sopranodynamics
@@ -278,5 +280,13 @@ basswords = { \openingcommonwords
   \midi {
     \tempo 4=100
     \set midiInstrument = "choir aahs"
+    \context {
+      \Voice
+      \remove Dynamic_performer
+    }
+    \context {
+      \Score
+      \consists Dynamic_performer
+    }
   }
 }
